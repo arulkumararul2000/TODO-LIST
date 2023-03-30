@@ -46,21 +46,22 @@ class App extends React.Component {
   }
 
   deleteItem(key) {
-    const filterItems = this.state.items.filter(item => item.key !== key);
+    const filterItems = this.state.items.filter((item) => item.key !== key);
     this.setState({
-      items: filterItems
-    })
+      items: filterItems,
+    });
   }
-  setUpdate(text, key){
+  setUpdate(text, key) {
     const items = this.state.items;
-    items.map(item=>{
-      if(item.key===key){
-        item.text=text;
+    // eslint-disable-next-line
+    items.map((item) => {
+      if (item.key === key) {
+        item.text = text;
       }
-    })
+    });
     this.setState({
-      items: items
-    })
+      items: items,
+    });
   }
   render() {
     return (
